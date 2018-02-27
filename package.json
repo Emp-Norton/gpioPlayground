@@ -1,0 +1,24 @@
+{
+  "name": "GPIO_Playground",
+  "version": "1.0.0",
+  "description": "Imagine - Make - Play",
+  "main": "index.js",
+  "engines": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "< N / A  >"
+  },
+  "author": "James Jelenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "< N / A >"
+  },
+  "homepage": "< N / A >",
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.17.0",
+    "webpack": "^4.0.1"
+  },
+  "devDependencies": {}
+}
