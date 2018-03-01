@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import LedButton from './LedButton.jsx';
 
 
 export default class App extends React.Component {
@@ -15,6 +16,7 @@ export default class App extends React.Component {
     return (
       <div> 
         <p> Hello! </p>
+        <LedButton imgUrl='./green.png' color="green" />
       </div>
       )
   }
