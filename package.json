@@ -26,7 +26,6 @@
     "express": "^4.16.2",
     "file-loader": "^1.1.10",
     "nodemon": "^1.17.0",
-    "onoff": "^2.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "url-loader": "^0.6.2",
