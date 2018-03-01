@@ -14,6 +14,7 @@ export default class BuzzerField extends React.Component {
 
 	buzz() {
     let message = $('#buzzerInput').value;
+    console.log(message)
     axios.get(`http://192.168.86.163:3000/buzzer/${message}`)
       .then(function(response) {
         console.log(response);
