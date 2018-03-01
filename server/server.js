@@ -2,6 +2,7 @@
 'use strict'
 let express = require('express');
 let path = require('path');
+let morse = require('./helpers/morse.js');
 let app = express();
 
 let Gpio = require('onoff').Gpio;
@@ -31,7 +32,9 @@ app.get('/light/:color/:toggle', (req, res) => {
 
 app.get('/buzzer/:string', (req, res) => {
   let message = req.params.string;
-  console.log(message);
+  let morseMessage = morse.convertToBeeps(message);
+
+  console.log(message, morseMessage);
 
   let disable = () => {
     buzz.writeSync(0);
@@ -40,7 +43,7 @@ app.get('/buzzer/:string', (req, res) => {
   buzz.writeSync(1);
   setTimeout(disable, 250);
   res.setHeader("Access-Control-Allow-Origin", "*"); // move this to an options hash to avoid repetition 
-  res.status(200).json("done")
+  res.status(200).json(morseMessage)
 })
 
                                                                           
