@@ -29,15 +29,14 @@ morse['y'] = '- . - -';
 morse['z'] = '- - . .'; 
 
 let convertToBeeps = (string) => {
-        let words = string.split(' ');
-        let blips = [];
-        words.forEach(word => {
-                let chars = word.split('').map(char => morse[char]);
-                blips.push(chars);
+  let words = string.split(' ');
+  let blips = [];
+  words.forEach(word => {
+    let chars = word.split('').map(char => morse[char]);
+    blips.push(chars);
 		blips.push(' ');
-        })
-        return blips.join()
+  })
+  return blips.join()
 }
-
 
 module.exports.convertToBeeps = convertToBeeps;
