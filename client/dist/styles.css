@@ -1,3 +1,10 @@
+.loudspeaker {
+	display: block;
+	border: 2px solid black;
+	border-radius: 5%;
+	width: 150px;
+	height: 150px;
+}
 
 .ledButton {
 	display: inline-block;
