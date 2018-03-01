@@ -8,13 +8,11 @@ export default class BuzzerField extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-
+      message: undefined
 		}
 	}
 
-	buzz() {
-    let message = $('#buzzerInput').value;
-    console.log(message)
+	buzz(message) {
     axios.get(`http://192.168.86.163:3000/buzzer/${message}`)
       .then(function(response) {
         console.log(response);
@@ -29,9 +27,12 @@ export default class BuzzerField extends React.Component {
 		return (
 			<div>
 				<img src={img} className="loudspeaker" onClick={ () => {
-          this.buzz();
+          this.buzz(this.state.message);
         }} />
-				<input type="text" id="buzzerInput" placeholder="Buzzer words!" />
+				<input type="text" id="buzzerInput" placeholder="Buzzer words!" onChange={ () => {
+          let message = $('#buzzerInput').val()
+          this.setState({message: message})
+        }} />
 			</div>
 		)
 	}
