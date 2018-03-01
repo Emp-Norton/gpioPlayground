@@ -35,7 +35,7 @@ app.get('/buzzer/:string', (req, res) => {
 
   let disable = () => {
     buzz.writeSync(0);
-  }
+  } 
 
   buzz.writeSync(1);
   setTimeout(disable, 250);
