@@ -2,9 +2,6 @@ import React from 'react';
 import axios from 'axios';
 
 
-
-
-
 export default class LedButton extends React.Component {
 	constructor(props) {
 		super(props);
@@ -27,6 +24,7 @@ export default class LedButton extends React.Component {
 				console.log(error)
 			})
 	}
+	
 	render() {
 		return (
 			<div className="ledButton" onClick={ () => {
