@@ -18,14 +18,10 @@ export default class LedButton extends React.Component {
 	toggle() {
 		let self = this;
 		let toggleIntent = this.state.toggle === "off" ? "on" : "off";
+		console.log(toggleIntent)
 		axios.get(`http://192.168.86.163:3000/light/${this.state.color}/${toggleIntent}`)
 			.then(function(response) {
-				console.log(response);
-				if (response == "done") {
-					self.setState({toggle: toggleIntent})
-				} else {
-					console.log('something went wrong');
-				}
+				self.setState({toggle: toggleIntent})
 			})
 			.catch(function(error){
 				console.log(error)
