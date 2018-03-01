@@ -34,14 +34,25 @@ app.get('/buzzer/:string', (req, res) => {
   let message = req.params.string;
   let morseMessage = morse.convertToBeeps(message);
 
-  console.log(message, morseMessage);
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
-  let disable = () => {
+  async function dit() {
+    buzz.writeSync(1)
+    await sleep(100);
     buzz.writeSync(0);
-  } 
+  }
 
-  buzz.writeSync(1);
-  setTimeout(disable, 250);
+  async function dah() {
+    buzz.writeSync(1)
+    await sleep(250);
+    buzz.writeSync(0);
+  }
+
+  dit()
+  dah()
+  
   res.setHeader("Access-Control-Allow-Origin", "*"); // move this to an options hash to avoid repetition 
   res.status(200).json(morseMessage)
 })
