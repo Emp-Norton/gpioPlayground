@@ -24,7 +24,8 @@ app.get('/light/:color/:toggle', (req, res) => {
         toggle = toggle == "on" ? 1 : 0;
         console.log(color, toggle);
         color.writeSync(toggle);
-        res.status(200).json('done')
+	res.setHeader("Access-Control-Allow-Origin", "*");
+        res.status(200).json("done")
 }) 
                                                                           
 app.listen(3000, () => {
