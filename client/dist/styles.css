@@ -1,4 +1,6 @@
+
 .ledButton {
+	display: inline-block;
 	border: 2px solid black;
 	border-radius: 5%;
 	text-align: center;
@@ -7,6 +9,7 @@
 }
 
 .ledImg {
+	display: inline-block;
 	height: 100px;
 	width: 100px;
 }

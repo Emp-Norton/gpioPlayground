@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import LedButton from './LedButton.jsx';
+import BuzzerField from './BuzzerField.jsx';
 
 
 export default class App extends React.Component {
@@ -15,8 +16,13 @@ export default class App extends React.Component {
   render() {
     return (
       <div> 
-        <p> Hello! </p>
-        <LedButton imgUrl='./green.png' color="green" />
+        <h1> Welcome to the GPIO Playground! </h1>
+        <div id="ledButtonContainer">
+          <LedButton imgUrl='./red.png' color="red" id="ledLeft" />
+          <LedButton imgUrl='./green.png' color="green" />
+          <LedButton imgUrl='./blue.png' color="blue" id="ledRight" />
+        </div>
+        <BuzzerField />
       </div>
       )
   }
