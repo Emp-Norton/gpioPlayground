@@ -1,0 +1,12 @@
+.ledButton {
+	border: 2px solid black;
+	border-radius: 5%;
+	text-align: center;
+	width: 125px;
+	height: 200px;
+}
+
+.ledImg {
+	height: 100px;
+	width: 100px;
+}
