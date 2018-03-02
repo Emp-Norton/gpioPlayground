@@ -1,4 +1,3 @@
-                                                                                                                    
 'use strict'
 let express = require('express');
 let path = require('path');
@@ -34,25 +33,14 @@ app.get('/buzzer/:string', (req, res) => {
   let message = req.params.string;
   let morseMessage = morse.convertToBeeps(message);
 
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
+  console.log(message, morseMessage);
 
-  async function dit() {
-    buzz.writeSync(1)
-    await sleep(100);
+  let disable = () => {
     buzz.writeSync(0);
-  }
+  } 
 
-  async function dah() {
-    buzz.writeSync(1)
-    await sleep(250);
-    buzz.writeSync(0);
-  }
-
-  dit()
-  dah()
-  
+  buzz.writeSync(1);
+  setTimeout(disable, 250);
   res.setHeader("Access-Control-Allow-Origin", "*"); // move this to an options hash to avoid repetition 
   res.status(200).json(morseMessage)
 })
